@@ -1,4 +1,4 @@
-# ClassEval-T: Code Translation Evaluation Dataset
+# ClassEval-T: Evaluating Large Language Models in Class-Level Code Translation
 
 ## Introduction
 
