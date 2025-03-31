@@ -2,7 +2,8 @@
 
 ## Introduction
 
-ClassEval-T is an open-source dataset specifically designed to evaluate the performance of large language models (LLMs) in code translation tasks. Designed by Du et al., ClassEval-T contains **94 real-world programming tasks**, covering scenarios like student registration systems, area calculators, Gomoku games, and more. This dataset features complex and substantial code, with an average of **66.7 lines of code** and **199.5 tokens per task**. To ensure comprehensive validation, each task includes **33.8 test cases**. The dataset is open for research purposes, enabling thorough evaluation of LLMs' code translation capabilities.
+ClassEval is the first class-level code generation benchmark described in the paper ["Escalating LLM-based Code Translation Benchmarking into the Class-level Era"](https://arxiv.org/abs/2411.06145).
+ClassEval-T is extended from ClassEval, a well-known class-level Python code generation benchmark consisting of multiple practical coding topics, such as database operation and game design, and diverse contextual dependencies (e.g., fields, methods, and libraries). ClassEval-T is open for research purposes, enabling thorough evaluation of LLMs' code translation capabilities.
 
 ## Dataset
 
