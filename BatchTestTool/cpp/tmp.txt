@@ -1,0 +1,18 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.7.6
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+适用于 .NET Framework MSBuild 版本 17.7.2+d6990bcfa
+生成启动时间为 2024/10/30 16:18:12。
+
+节点 1 上的项目“D:\C++ programs\project\Sample-Test3\Sample-Test3.sln”(默认目标)。
+ValidateSolutionConfiguration:
+  正在生成解决方案配置“Debug|x64”。
+项目“D:\C++ programs\project\Sample-Test3\Sample-Test3.sln”(1)正在节点 1 上生成“D:\C++ programs\project\Sample-Test3\Sample-Test3\Sample-Test3.vcxproj”(2) (默认目标)。
+InitializeBuildStatus:
+  正在创建“x64\Debug\Sample-Test3.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+  正在对“x64\Debug\Sample-Test3.tlog\unsuccessfulbuild”执行 Touch 任务。
+ClCompile:
+  D:\Visual Studio 2022\Community\VC\Tools\MSVC\14.37.32822\bin\HostX64\x64\CL.exe /c /I"D:\C++ programs\project\Sample-Test3\packages\Eigen3.3.3.9\build\native\../..//lib/native/include/" /I"D:\C++ programs\project\Sample-Test3\packages\tinyxml.2.8.2.3\build\native\include" /I"D:\C++ programs\project\Sample-Test3\packages\libzip-c.1.9.2.6\include" /I"D:\C++ programs\project\Sample-Test3\packages\boost.1.86.0\build\..\lib\native\include\\" /I"D:\C++ programs\project\Sample-Test3\packages\gmock.1.11.0\build\native\..\..\lib\native\include\\" /I"D:\C++ programs\project\Sample-Test3\packages\Microsoft.googletest.v140.windesktop.msvcstl.dyn.rt-dyn.1.8.1.7\build\native\include" /Zi /nologo /W3 /WX- /diagnostics:column /Od /D TIXML_USE_STL /D X64 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /std:c++20 /Fo"x64\Debug\\" /Fd"x64\Debug\vc143.pdb" /external:W3 /Gd /TP /FC /errorReport:queue test.cpp
+  test.cpp
+D:\Visual Studio 2022\Community\VC\Tools\MSVC\14.37.32822\include\ciso646(15,47): warning C4996: '_Header_ciso646': warning STL4036: <ciso646> is removed in C++20. You can define _SILENCE_CXX20_CISO646_REMOVED_WARNING or _SILENCE_ALL_CXX20_DEPRECATION_WARNINGS to suppress this warning. [D:\C++ programs\project\Sample-Test3\Sample-Test3\Sample-Test3.vcxproj]

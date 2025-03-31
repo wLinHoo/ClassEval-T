@@ -1,0 +1,2 @@
+public class meta {
+}
