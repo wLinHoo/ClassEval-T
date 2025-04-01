@@ -2,7 +2,7 @@
 
 ## Introduction
 
-ClassEval is the first class-level code translation benchmark described in the paper ["Escalating LLM-based Code Translation Benchmarking into the Class-level Era"](https://arxiv.org/abs/2411.06145), which has been accepted to the ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA 2025).
+ClassEval-T is the first class-level code translation benchmark described in the paper ["Escalating LLM-based Code Translation Benchmarking into the Class-level Era"](https://arxiv.org/abs/2411.06145), which has been accepted to the ACM SIGSOFT International Symposium on Software Testing and Analysis *(ISSTA 2025)*.
 
 ClassEval-T is extended from ClassEval, a well-known class-level Python code generation benchmark consisting of multiple practical coding topics, such as database operation and game design, and diverse contextual dependencies (e.g., fields, methods, and libraries). ClassEval-T is open for research purposes, enabling thorough evaluation of LLMs' code translation capabilities.
 
