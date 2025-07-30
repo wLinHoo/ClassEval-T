@@ -22,7 +22,7 @@ python preprocess.py
 ### Execute Test  
 Navigate to the `classeval-T_evaluation` directory and run:  
 ```bash
-python evaluation.py --source_file_name model_output --eval_data ClassEval_data
+python evaluation.py --source_file_name model_output --eval_data ClassEval-T_data
 ```
 - `--source_file_name`: Specifies the filenames pertaining to model outputs.  
 - `--eval_data`: Refers to the benchmark data file, named `ClassEval_data` in the current rendition.  
