@@ -21,8 +21,8 @@ if __name__ == '__main__':
     parser.add_argument(
         "--eval_data",
         type=str,
-        default='ClassEval_data',
-        help="ClassEval data",
+        default='ClassEval-T_data',
+        help="ClassEval-T data",
     )
     args = parser.parse_args()
 
