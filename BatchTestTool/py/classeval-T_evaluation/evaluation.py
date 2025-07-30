@@ -41,7 +41,7 @@ if __name__ == '__main__':
         result["pass_1"] = AutoT.cal_metrics_pass_at_k(model_list, 1, 5)
         result["pass_3"] = AutoT.cal_metrics_pass_at_k(model_list, 3, 5)
         result["pass_5"] = AutoT.cal_metrics_pass_at_k(model_list, 5, 5)
-    save_path = PathUtil().test_result_data("pass_at_k_result", 'json')
+    save_path = PathUtil().test_result_data("success_class_ratio_report", 'json')
 
     if os.path.exists(save_path):
         with open(save_path, encoding='utf-8') as file:
