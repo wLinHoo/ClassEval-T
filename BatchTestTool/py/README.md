@@ -30,14 +30,15 @@ python evaluation.py --source_file_name model_output --eval_data ClassEval-T_dat
 ## Output  
 The evaluation results are systematically cataloged in the `output/result` directory:  
 - `detailed_result.json`: Dive deep with a meticulous examination of every test case across models' outputs.  
-The runtime logs for every test case are in the log directory.  
+The runtime logs for every test case are in the log directory.
+- `success_class_ratio_report.json`: Output the statistical analysis of class-level test results.
 
 Additionally, we provide a `calculate.py` file in the `preprocess` folder for statistical analysis of method-level test results. Navigate to the `preprocess` folder and execute:  
 ```bash
 python calculate.py
 ```
 - `file_path`: Replace with the path of the test output file, for example, `"detailed_result.json"`;  
-- `output_file_path`: Replace with the output `.txt` file path, which will contain detailed information on method-level testing, for example, `"success_ratio_report.txt"`.  
+- `output_file_path`: Replace with the output `.txt` file path, which will contain detailed information on method-level testing, for example, `"success__method_ratio_report.txt"`.  
 
 ## Compile Test 
 Navigate to the `preprocess` folder and execute:  
