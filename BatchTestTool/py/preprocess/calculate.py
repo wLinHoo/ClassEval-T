@@ -40,7 +40,7 @@ def main():
     # Replace with your JSON file path
     file_path = r"..\output\result\detailed_result.json"
     # Output file path
-    output_file_path = r"..\output\result\success_ratio_report.txt"
+    output_file_path = r"..\output\result\success_method_ratio_report.txt"
 
     # Load JSON data
     data = load_json_file(file_path)
