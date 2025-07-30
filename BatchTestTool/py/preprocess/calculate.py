@@ -1,33 +1,33 @@
 import json
 
-# 读取 JSON 文件
+# Read JSON file
 def load_json_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
     return data
 
-# 计算单个子字典的 success 比例的函数
+# Function to calculate success ratio for a single sub-dictionary
 def calculate_success_ratio_for_class(class_eval_value):
     total_tests = 0
     success_tests = 0
 
-    # 遍历子字典中的每个字段
+    # Iterate through each field in the sub-dictionary
     for test_key, test_value in class_eval_value.items():
-        # 跳过名称是 "TestClass" 或者以 "TEST" 或 "MAIN" 结尾的键
+        # Skip keys with names "TestClass" or ending with "Test" or "Main"
         if test_key == "TestClass" or test_key.endswith("Test") or test_key.endswith("Main"):
             continue
 
-        # 获取该字段的 success 值
+        # Get the success value for this field
         success_count = test_value.get("success", 0)
 
-        # 更新总测试次数
+        # Update total test count
         total_tests += 1
 
-        # 如果 success 大于 0，认为该测试成功
+        # If success is greater than 0, consider this test successful
         if success_count > 0:
             success_tests += 1
 
-    # 计算 success 占比
+    # Calculate success ratio
     if total_tests > 0:
         success_ratio = success_tests / total_tests
     else:
@@ -35,62 +35,74 @@ def calculate_success_ratio_for_class(class_eval_value):
 
     return success_ratio, success_tests, total_tests
 
-# 主函数：从 JSON 文件加载数据、计算 success 比例并将结果写入 txt 文件
+# Main function: load data from JSON file, calculate success ratios, and write results to txt file
 def main():
-    # 这里替换为你的 JSON 文件路径
-    file_path = r"detailed_result.json"
-    # 输出文件路径
-    output_file_path = r"success_ratio_report.txt"
+    # Replace with your JSON file path
+    file_path = r"..\output\result\detailed_result.json"
+    # Output file path
+    output_file_path = r"..\output\result\success_ratio_report.txt"
 
-    # 加载 JSON 数据
+    # Load JSON data
     data = load_json_file(file_path)
     model_output = data.get("model_output", {})
 
-    # 全局计数器，用于计算总的成功比例
+    # Global counters for calculating total success ratio
     total_tests_global = 0
     success_tests_global = 0
 
-    # 打开一个文件来写入结果
+    # Open a file to write results
     with open(output_file_path, 'w', encoding='utf-8') as output_file:
-        # 遍历每个子字典，如 ClassEval_0, ClassEval_1
+        # Iterate through each sub-dictionary, such as ClassEval_0, ClassEval_1
         for class_eval_key, class_eval_value in model_output.items():
+            # Skip specified ClassEval items
+            #if class_eval_key in ['ClassEval_34', 'ClassEval_44', 'ClassEval_45', 'ClassEval_69', 'ClassEval_52',
+                                  #'ClassEval_58']:
+                #continue
+
             success_ratio, success_tests, total_tests = calculate_success_ratio_for_class(class_eval_value)
 
-            # 累加到全局计数器
+            # Add to global counters
             total_tests_global += total_tests
             success_tests_global += success_tests
 
-            # 输出每个子字典的结果到文件
+            # Output each sub-dictionary result to file
             output_file.write(f"{class_eval_key}:\n")
-            output_file.write(f"成功的测试数: {success_tests}\n")
-            output_file.write(f"总的测试数: {total_tests}\n")
-            output_file.write(f"成功比例: {success_ratio:.2%}\n\n")
+            output_file.write(f"Successful tests: {success_tests}\n")
+            output_file.write(f"Total tests: {total_tests}\n")
+            output_file.write(f"Success ratio: {success_ratio:.2%}\n\n")
 
-            # 同时在控制台打印每个子字典的结果
+            # Also print each sub-dictionary result to console
             print(f"{class_eval_key}:")
-            print(f"成功的测试数: {success_tests}")
-            print(f"总的测试数: {total_tests}")
-            print(f"成功比例: {success_ratio:.2%}")
+            print(f"Successful tests: {success_tests}")
+            print(f"Total tests: {total_tests}")
+            print(f"Success ratio: {success_ratio:.2%}")
             print()
 
-        # 计算全局成功比例
+        # Calculate global success ratio
         if total_tests_global > 0:
             global_success_ratio = success_tests_global / total_tests_global
         else:
             global_success_ratio = 0
 
-        # 将全局结果写入文件
-        output_file.write(f"总的成功测试数: {success_tests_global}\n")
-        output_file.write(f"总的测试数: {total_tests_global}\n")
-        output_file.write(f"总的成功比例: {global_success_ratio:.2%}\n")
+        # Write global results to file
+        output_file.write(f"Method level:\n")
+        output_file.write(f"Total successful tests: {success_tests_global}\n")
+        output_file.write(f"Total tests: {total_tests_global}\n")
+        output_file.write(f"Total success ratio: {global_success_ratio:.2%}\n\n")
 
-        # 同时在控制台打印全局结果
-        print(f"总的成功测试数: {success_tests_global}")
-        print(f"总的测试数: {total_tests_global}")
-        print(f"总的成功比例: {global_success_ratio:.2%}")
+        # Write global results to file
+        output_file.write(f"Class level:\n")
+        output_file.write(f"Total tests: 94\n")
+        output_file.write(f"Successful tests: \n")
+        output_file.write(f"Success ratio: \n")
 
-    print(f"所有结果已写入文件: {output_file_path}")
+        # Also print global results to console
+        print(f"Total successful tests: {success_tests_global}")
+        print(f"Total tests: {total_tests_global}")
+        print(f"Total success ratio: {global_success_ratio:.2%}")
 
-# 执行主函数
+    print(f"All results have been written to file: {output_file_path}")
+
+# Execute main function
 if __name__ == "__main__":
     main()
