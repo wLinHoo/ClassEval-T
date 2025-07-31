@@ -299,7 +299,9 @@ class AutoTest:
                             pass_at_k = self.cal_pass_at_k(n, k, k_success)
                             partial_success_class_num += pass_at_k
 
-            result[model_name] = {"class_success": class_success_num / class_num,
+            result[model_name] = {"class_success_num": class_success_num,
+                                  "class_total_num": class_num,
+                                  "class_success": class_success_num / class_num,
                                   "class_partial_success": partial_success_class_num / class_num}
 
         return result
