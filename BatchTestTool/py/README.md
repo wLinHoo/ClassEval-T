@@ -25,7 +25,7 @@ Navigate to the `classeval-T_evaluation` directory and run:
 python evaluation.py --source_file_name model_output --eval_data ClassEval-T_data
 ```
 - `--source_file_name`: Specifies the filenames pertaining to model outputs.  
-- `--eval_data`: Refers to the benchmark data file, named `ClassEval_data` in the current rendition.  
+- `--eval_data`: Refers to the benchmark data file, named `ClassEval-T_data` in the current rendition.  
 
 ## Output  
 The evaluation results are systematically cataloged in the `output/result` directory:  
@@ -38,7 +38,7 @@ Additionally, we provide a `calculate.py` file in the `preprocess` folder for st
 python calculate.py
 ```
 - `file_path`: Replace with the path of the test output file, for example, `"detailed_result.json"`;  
-- `output_file_path`: Replace with the output `.txt` file path, which will contain detailed information on method-level testing, for example, `"success__method_ratio_report.txt"`.  
+- `output_file_path`: Replace with the output `.txt` file path, which will contain detailed information on method-level testing, for example, `"success_method_ratio_report.txt"`.  
 
 ## Compile Test 
 Navigate to the `preprocess` folder and execute:  
