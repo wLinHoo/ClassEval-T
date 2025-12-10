@@ -52,7 +52,7 @@ def execute_python_files(directory, output_file):
 
     # 计算成功率
     success_rate = (successful_files / total_files) * 100 if total_files > 0 else 0
-    print("编译测试:")
+    print("Compile Test:")
     print(f"Total files: {total_files}")
     print(f"Successful files: {successful_files}")
     print(f"Success rate: {success_rate:.2f}%")
